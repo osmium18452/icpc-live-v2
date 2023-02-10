@@ -48,7 +48,7 @@ public class Json {
             String isoOffset = String.format("%c%02d:%02d",offsetSign == 1 ? '+' : '-',offsetHour,offsetMinute);
 
             String isoDateTime = isoDate + "T" + isoTime + isoOffset;
-            ZonedDateTime zdt = ZonedDateTime.parse(isoDateTime , DateTimeFormatter.ISO_DATE_TIME);
+            ZonedDateTime zdt = ZonedDateTime.parse(isoDateTime);
             return zdt.toInstant().toEpochMilli();
         } else {
             throw new IllegalArgumentException();
